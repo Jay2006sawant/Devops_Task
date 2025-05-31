@@ -1,5 +1,10 @@
 # DevOps Task: Containerized Node.js Web Application with CI/CD
 
+## Live Demo
+
+The application is live at:  
+[http://34.27.69.25/](http://34.27.69.25/)
+
 ## Project Overview
 This project demonstrates a complete DevOps workflow for a simple Node.js application, including:
 - Containerization with Docker
