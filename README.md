@@ -77,10 +77,12 @@ docker run -p 3000:3000 jay-nodejs-app
 6. Created a VM and installed Docker.
 7. Deployed the app using the pipeline.
 8. Deployed and tested on GCP and GitHub Codespaces.
+9. **Added a firewall rule to allow TCP traffic on port 80 (HTTP) in GCP.**
 
 ### Problems Faced & Solutions
 - **npm install error:** Fixed by running commands in the correct directory (`Devops_Task`).
 - **Port issues:** Ensured port 3000 was open on the VM and in Docker run command.
+- **App not accessible from browser:** **Added a GCP firewall rule to allow ingress on TCP:80 from 0.0.0.0/0.**
 - **CI/CD secrets:** Added SSH keys as GitHub secrets for deployment.
 
 ---
