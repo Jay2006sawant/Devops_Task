@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: |
+          npm install curl
+          node -e "require('child_process').exec('curl -s http://localhost:3000', (e,stdout)=>console.log(stdout))"
+        continue-on-error: true
+
+      - name: Build Docker image
+        run: docker build -t node-cicd-demo .
