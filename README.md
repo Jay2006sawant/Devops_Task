@@ -74,21 +74,44 @@ docker run -p 3000:3000 jay-nodejs-app
 ## Documentation
 
 ### Steps Followed
-1. Forked and set up a starter Node.js app.
-2. Wrote a Dockerfile to containerize the app.
-3. Built and tested the Docker container locally.
-4. Pushed code and Dockerfile to GitHub.
-5. Configured GitHub Actions for CI/CD.
-6. Created a VM and installed Docker.
-7. Deployed the app using the pipeline.
-8. Deployed and tested on GCP and GitHub Codespaces.
-9. **Added a firewall rule to allow TCP traffic on port 80 (HTTP) in GCP.**
+
+1. **Project Setup**
+   - Forked and set up a starter Node.js app.
+   - Wrote a Dockerfile to containerize the app.
+   - Built and tested the Docker container locally.
+   - Pushed code and Dockerfile to GitHub.
+
+2. **CI/CD Pipeline**
+   - Configured GitHub Actions for automated build, test, and deployment.
+
+3. **Cloud Deployment**
+   - Created a VM instance on Google Cloud Platform (GCP).
+   - Installed Docker on the VM.
+   - Deployed the app using the pipeline and manual Docker commands.
+   - Deployed and tested on GCP and GitHub Codespaces.
+
+4. **Network Configuration**
+   - Added a firewall rule to allow TCP traffic on port 80 (HTTP) in GCP.
+
+---
 
 ### Problems Faced & Solutions
-- **npm install error:** Fixed by running commands in the correct directory (`Devops_Task`).
-- **Port issues:** Ensured port 3000 was open on the VM and in Docker run command.
-- **App not accessible from browser:** **Added a GCP firewall rule to allow ingress on TCP:80 from 0.0.0.0/0.**
-- **CI/CD secrets:** Added SSH keys as GitHub secrets for deployment.
+
+- **npm install error:**
+  - *Problem:* Running `npm install` in the wrong directory.
+  - *Solution:* Ensured commands were run in the correct project directory (`Devops_Task`).
+
+- **Port issues:**
+  - *Problem:* App not accessible due to closed ports.
+  - *Solution:* Opened port 3000 in Docker and port 80 in the VM firewall.
+
+- **App not accessible from browser:**
+  - *Problem:* Could not access the app via the public IP.
+  - *Solution:* Added a GCP firewall rule to allow ingress on TCP:80 from `0.0.0.0/0`.
+
+- **CI/CD secrets:**
+  - *Problem:* Securely managing deployment keys.
+  - *Solution:* Added SSH keys as GitHub secrets for deployment automation.
 
 ---
 
