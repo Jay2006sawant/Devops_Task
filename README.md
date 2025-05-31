@@ -5,6 +5,9 @@
 The application is live at:  
 [Node.js CI/CD Demo (Live)](http://34.27.69.25/)
 
+![Screenshot 2025-05-31 163811](https://github.com/user-attachments/assets/b6954494-3479-4213-8351-c36745beb107)
+
+
 ## Project Overview
 This project demonstrates a complete DevOps workflow for a simple Node.js application, including:
 - Containerization with Docker
